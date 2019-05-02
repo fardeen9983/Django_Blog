@@ -23,6 +23,9 @@ ____
 
 ## Initial Project structure
 
+Command to display the project structure
+> tree
+
 manage.py - Execute command line arguments. Mostly unchanged throughout the project
 
 PROJECT_NAME subfolder:
@@ -58,3 +61,15 @@ Default admin route :
 Use Ctrl^C to stop the server
 
 ---
+
+## Adding Apps to Django web app
+To be clear, we have already created our web project. To add an app is similar to adding a section to the website. We can add multiple apps to single web project or add the same app across muliple web proects.
+
+The commad to create an app:
+> python manage.py startapp blog
+
+Here blog is the name of the app we have added to our web project
+
+___
+## Proect app structure
+1. views.py : Used to handle URL requests and render appropriate response on browser
