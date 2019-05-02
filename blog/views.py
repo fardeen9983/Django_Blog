@@ -8,8 +8,12 @@ from django.http import HttpResponse
 def home(request):
     # Return HTML response to the client
     # To map this to a specific URL create a urls.py file for current app
-    return HttpResponse("<h1> Blog Home</h1>")
+    #return HttpResponse("<h1> Blog Home</h1>")
+
+    # instead of returning entire HTML pages just render the HTML template instead using render module
+    return render(request,'home.html')
 
 # Route for an About Page
 def about(request):
-    return HttpResponse("<h1>About Page</h1>")
+    # return HttpResponse("<h1>About Page</h1>")
+    return render(request,'about.html')

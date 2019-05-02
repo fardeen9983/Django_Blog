@@ -74,3 +74,15 @@ ___
 ## Proect app structure
 1. views.py : Used to handle URL requests and render appropriate response on browser
 2. urls.py: Mapping URL patterns to methods for this app
+---
+## HTML Templates
+It is combersome to write down HTML response for each of the URL request. Sure we can deliver static web pages when needed, but things complicate when we need to deliver dynamic content.
+
+For this templates are used.
+
+Create a templates directory in 'blog' app root directory where all the templates will be stored. 
+
+Actual path for templates:
+> blog -> templates -> *.html
+
+Next add our App configuration to the settings.py file of root web app, so that Django can look up for the templates for our app. The app config is stored in the apps.py file of the app directory. Add this configuration path to the settings.py file's INSTALLED_APPS list.
