@@ -14,8 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+# import include module from django.urls to include url patterns from apps
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Map URL patterns for blog app as the default
+    path("",include('blog.urls')),
 ]
+
+# Adding new URL patterns will lead to no longer displaying the default page on server root url

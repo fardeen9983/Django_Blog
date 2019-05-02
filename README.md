@@ -73,3 +73,4 @@ Here blog is the name of the app we have added to our web project
 ___
 ## Proect app structure
 1. views.py : Used to handle URL requests and render appropriate response on browser
+2. urls.py: Mapping URL patterns to methods for this app
