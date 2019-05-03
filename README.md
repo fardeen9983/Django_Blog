@@ -187,3 +187,21 @@ Django already has form classes such as for User creation which can be rendered 
 To protect against CSRF scripting attack each form in Django web app passes a CSRF token.
 
 Now to add extra fields to the form like Email addresses we would have to create a new one by extending the previous one. We need to first create a folder 'forms' in the root directory of the app and add a forms.py file
+
+---
+## Crispy Forms
+Easily manage forms in HTML. Is compatible with other styling libraries
+
+Installation:
+>pip install django-crispy-forms
+
+Add this as an installed app insettings.py
+> ' crispy_forms '
+
+By default it uses Bootstrap-2 CSS framework which is pretty old. So we can specify the CSS framework to use in the same settings.py file. At the end of that file, create a new configuration.
+> CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+Or any other CSS framework
+
+To use crispy_forms in templates load it:
+>{% load crispy_forms_tags %}
