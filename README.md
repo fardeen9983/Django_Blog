@@ -185,3 +185,5 @@ Django already has form classes such as for User creation which can be rendered 
 > django.contrib.auth.forms
 
 To protect against CSRF scripting attack each form in Django web app passes a CSRF token.
+
+Now to add extra fields to the form like Email addresses we would have to create a new one by extending the previous one. We need to first create a folder 'forms' in the root directory of the app and add a forms.py file
