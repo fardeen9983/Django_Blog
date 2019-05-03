@@ -86,3 +86,7 @@ Actual path for templates:
 > blog -> templates -> *.html
 
 Next add our App configuration to the settings.py file of root web app, so that Django can look up for the templates for our app. The app config is stored in the apps.py file of the app directory. Add this configuration path to the settings.py file's INSTALLED_APPS list.
+
+NExt we can deliver content to the templates dynamically and embed Python code in HTML files using Jinja template synatx.
+1. {% .... %} : Place python code in this manner
+2. {{ ... }} : Used to print anything placed inside

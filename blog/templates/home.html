@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<!-- Blog Home Page Template -->
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    <h1>Blog Home</h1>
-</body>
-</html>
+<!--Remove repaeating code-->
+<!--Inherit the base template-->
+{% extends "base.html" %}
+<!--Create a block of contenet-->
+{% block content %}
+    <!--Iterate through the posts using Jinja template syntax-->
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        <p>By {{ post.author }} on {{ post.date_posted }}</p>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+{% endblock content%} <!--block name is optional-->
