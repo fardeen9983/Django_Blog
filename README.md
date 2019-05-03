@@ -133,3 +133,42 @@ This still doesn't make any changes. To make the migrations:
  > python manage.py createsuperuser
 
  Specify the username, email and password and you are done. You can access the admin page from the ' /admin ' route
+
+ ---
+ ## Working with databases
+ Django has it's own ORM (object relational mapping) tool which allows interaction with databases though object oriented manner abstracting the native structure of the DB without changing the code.
+
+ Databases in Django are handles as classes called models. These models are placed in the models.py file in the app's directory.
+
+After creating these models or making changes to them so as to update the database, we have to rerun the migrations. This would create a py files in the migration folders describing in detail the model creation and modification operations.
+
+To view the SQL code that actually runs behind the migration use the command:
+>python manage.py sqlmigrate APP_NAME MIGRATE_CODE
+
+The migrate code is actually the number prefix of the migration file created. Ex:
+> python manage.py sqlmigrate blog 0001
+
+Finally run the migrate command to apply the migrations.
+
+So migrations play a big role in abstracting Database and SQL operations.
+
+---
+## Running Django project from python command shell
+Command:
+>python manage.py shell
+---
+## Querysets
+Django provides a pretty easy way to execute queries on model. For ex, if we fant to fetch all the posts made by a user all we hade to do is:
+>user.post_set
+
+Note - user is an instance of User mod. The following code wont work on the model itself.
+
+This return a RelatedManager on which we can apply other queries like :
+
+1. Get all the posts made by user : User.post_Set.all( )
+2. Create a new post : User.post_set.create( post_paramas ), no need to set up author.
+---
+## Set up Post model on admin route 
+This allows us to add, delete and modify Posts just like we do with Users and Groups.
+
+To do so we need to register our model in admin.py file of the app directory
