@@ -87,6 +87,29 @@ Actual path for templates:
 
 Next add our App configuration to the settings.py file of root web app, so that Django can look up for the templates for our app. The app config is stored in the apps.py file of the app directory. Add this configuration path to the settings.py file's INSTALLED_APPS list.
 
-NExt we can deliver content to the templates dynamically and embed Python code in HTML files using Jinja template synatx.
+Next we can deliver content to the templates dynamically and embed Python code in HTML files using Jinja template synatx.
 1. {% .... %} : Place python code in this manner
 2. {{ ... }} : Used to print anything placed inside
+
+Templates have the feature of inheritance. i.e, it is possible to create a template containing the content of the base template and adding your own. This is done through
+> {% extends "base_template file" %}
+
+Then we can define a block in the base template using:
+> {% block content %} ... {% endblock %}
+
+Whatever we write in the inherited templates as a block container, it will replace the container in the base template and render it
+
+___
+## Using static files like css
+All the static resources such as css and js files can be used in the django web application by placing them in subfolder 'static' in our app root directrory.
+> blog -> static -> *.css, etc 
+
+To load the static files in templates:
+> {% load static %}
+
+And then simply include/link the static file in your template
+
+To avoid rewriting URLs whenever we cahnge them across all files using them we can simply access it using template syntax.So url for blog home ("" - route ) : 
+> {% url "blog-home" %} 
+
+ Alias for blog root url : "blog-home" from urlspattern in urls.py
