@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from users import views as user_views
 
 # import include module from django.urls to include url patterns from apps
 
@@ -22,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Map URL patterns for blog app as the default
     path("",include('blog.urls')),
+    # Map URL patterns of users app to /users route
+    path("register/",user_views.register,name = 'register')
 ]
 
 # Adding new URL patterns will lead to no longer displaying the default page on server root url

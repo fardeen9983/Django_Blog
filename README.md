@@ -172,3 +172,16 @@ This return a RelatedManager on which we can apply other queries like :
 This allows us to add, delete and modify Posts just like we do with Users and Groups.
 
 To do so we need to register our model in admin.py file of the app directory
+
+Django template date formating
+>https://docs.djangoproject.com/en/2.1/ref/templates/builtins/#date
+___
+## Create login page with input validation and user registration
+
+Create a new app for handling user logic
+> python manage.py startapp users
+
+Django already has form classes such as for User creation which can be rendered as HTML forms. 
+> django.contrib.auth.forms
+
+To protect against CSRF scripting attack each form in Django web app passes a CSRF token.

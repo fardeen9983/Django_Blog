@@ -1,0 +1,26 @@
+<!--Inherit the base template-->
+{% extends "base.html" %}
+<!--Create a block of contenet-->
+{% block content %}
+    <div class="content-section">
+        <form method="post">
+            <!--Add CSRF token (Cross Site Request forgery - a hidden token) -->
+            {% csrf_token %}
+
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Now</legend>
+                <!--Now render the entire UserCreationForm-->          
+                <!-- form.as_p allows the form elements to be divided into paragraphs-->
+                {{ form.as_p }}
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="Submit">Sign Up</button>
+                </div>
+            </fieldset>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already have an Account? <a href class="ml-2" href="#">Sign In</a>
+            </small>
+        </div>
+    </div>
+{% endblock content%} <!--block name is optional-->
