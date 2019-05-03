@@ -113,3 +113,23 @@ To avoid rewriting URLs whenever we cahnge them across all files using them we c
 > {% url "blog-home" %} 
 
  Alias for blog root url : "blog-home" from urlspattern in urls.py
+
+ ---
+ ## Create an admin for Django web project
+ First of all this will require one to create a Database for the web project with a admin_user table.
+
+ To resolve this we need to run some migrations:
+> python manage.py makemigrations
+
+The message we get:
+>No changes detected
+
+This is because we have not yet created any tables/DB.
+
+This still doesn't make any changes. To make the migrations:
+>python manage.py migrate
+
+ Now create the superuser. Use the command
+ > python manage.py createsuperuser
+
+ Specify the username, email and password and you are done. You can access the admin page from the ' /admin ' route
