@@ -32,13 +32,17 @@ def register(request):
         form = UserRegistrationForm(request.POST)    
         # Valid the form to conatin desired information only
         if form.is_valid():
-            # To prevent regestering the same user save the form details 
-            form.save()
-            # Create fileds from form data
-            username = form.cleaned_data.get('username')
-            # Display a message on Register template that valid data was recieved. Also modify the base template for handling such messages
-            messages.success(request,f"Account created for {username}!")
-            # Redirect the user to blog home page
-            return redirect('blog-home')
+                # To prevent regestering the same user save the form details 
+                form.save()
+                # Create fileds from form data
+                username = form.cleaned_data.get('username')
+                # Display a message on Register template that valid data was recieved. Also modify the base template for handling such messages
+                messages.success(request,f"Your account has been created. You can now login")
+                
+                # Redirect the user to blog home page
+                # return redirect('blog-home')
+
+                # Better to redirect the user to login page
+                return redirect('login')
 
     return render(request,"register.html",{ 'form' : form })

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+<!--Enable crispy forms-->
+{% load crispy_forms_tags %}
+<!--Create a block of contenet-->
+{% block content %}
+    <h2>You have been logged Out</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a class="ml-2" href="{% url 'login' %}">Log In</a>
+        </small>
+    </div>
+{% endblock content%} <!--block name is optional-->

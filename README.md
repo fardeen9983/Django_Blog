@@ -205,3 +205,17 @@ Or any other CSS framework
 
 To use crispy_forms in templates load it:
 >{% load crispy_forms_tags %}
+___
+## Using inbuilt views : Login Page
+Django has a library of views we can render as web pages like creating a login page without any hassle.
+
+The login page view is stored in django.contrib.auth package
+Add the login and logout view to respective URLs.
+But as of now these views do not have predefined templates so they cannot be directly accessed. We would have to create our own templates for each view
+
+Upon successfull login the browser tries calling the /account/profile route which does not exist as of now. But we would like to modify this to our preferred route by modifying the settings.py file.
+
+Add the configuration:
+>LOGIN_REDIRECT_URL = "blog-home"
+
+If we do not specify Logout template Django will use the defalt Djando admin logout template.
