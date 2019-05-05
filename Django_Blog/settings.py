@@ -133,3 +133,10 @@ LOGIN_REDIRECT_URL = "blog-home"
 
 # The URL to be opened when unauthorised user accesses loggediin privileges
 LOGIN_URL="login"
+
+# Directory path for storing uploaded files
+# The os.path.join and BASE_DIR ensure that we get the correct path for the root directory of our project
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+# Specify the public url to access the media root directory
+MEDIA_URL = '/media/'

@@ -18,11 +18,12 @@ class Profile(models.Model):
 
     # Add a profile image field and specify the storage extension
     # Also specify directories to which image will be stored to
+    # Also specify the default file to be looked upon if none is provided
     image = models.ImageField(default='default.jpg',upload_to = "profile_pics")
 
     # Define toString method
     def __str__(self):
         return f'{ self.user.username } Profile'
 
-# Finally run migrations for Profile model
+# Finally run migrations for Profile model and register it in admin.py
 

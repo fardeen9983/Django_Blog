@@ -231,3 +231,17 @@ Create a Profile model extending the User model and adding extra features. To ma
 >pip install Pillow
 
 Run migrations for the new model and apply them
+
+We can specify the particular directory and URL for all our media files by adding the following in the settings.py file:
+ > MEDIA_ROOT = 'path to the desried directory'
+
+ > MEDIA_URL = ' public URL to access the MEDIA directory'
+ ---
+ ## Adding static media during development
+ In the urls.py file of root project, to the urlpatterns add this:
+ > urlpatterns = [ ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+ This is not suitable for production phase.
+
+ When no profile image is added for an user we can specify the default image by placing the image of same name in MEDIA_ROOT directory.
+ 

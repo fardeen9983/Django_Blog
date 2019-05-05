@@ -3,7 +3,15 @@
 {% load crispy_forms_tags %}
 <!--Create a block of contenet-->
 {% block content %}
-    <!--Print current user name-->
-    <h2>{{ user.username }}</h2>
+    <div class="content-section">
+        <div class="media">
+          <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" width="250" height="250">
+          <div class="media-body">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+          </div>
+        </div>
+        <!-- FORM HERE -->
+      </div>
     
 {% endblock content%} <!--block name is optional-->
