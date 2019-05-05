@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.shortcuts import redirect
 # Import the new UserRegisterationForm
 from .forms.forms import UserRegistrationForm
+# Import decorator to ensure user is logged in
+from django.contrib.auth.decorators import login_required
 
 """
 Types of messages in Django
@@ -46,3 +48,9 @@ def register(request):
                 return redirect('login')
 
     return render(request,"register.html",{ 'form' : form })
+
+
+# Create User profile page and only allow logged in users to access it.
+@login_required
+def profile(request):
+        return render(request,'profile.html')

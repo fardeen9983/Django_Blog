@@ -219,3 +219,7 @@ Add the configuration:
 >LOGIN_REDIRECT_URL = "blog-home"
 
 If we do not specify Logout template Django will use the defalt Djando admin logout template.
+
+Django specifies a global User variable that stores information of the current user whether he is logged in or not.
+
+We can also specify that a route can only be accessed by authenticated users. For this we can use the login_required decorator annotation on the route.

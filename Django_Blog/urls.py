@@ -27,10 +27,13 @@ urlpatterns = [
     path("",include('blog.urls')),
     # Map URL patterns of users app to /users route
     path("register/",user_views.register,name = 'register'),
+    # Profile page
+    path('profile/',user_views.profile,name="profile"),
     # Create a login view from inbuilt ones and specify the template
     path('login/',auth_views.LoginView.as_view(template_name="login.html"),name="login"),
     # Create a logout view from inbuilt ones and specify the template
-    path('logout/',auth_views.LogoutView.as_view(template_name="logout.html"),name="logout")
+    path('logout/',auth_views.LogoutView.as_view(template_name="logout.html"),name="logout"),
+    
 ]
 
 # Adding new URL patterns will lead to no longer displaying the default page on server root url

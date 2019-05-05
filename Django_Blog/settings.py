@@ -125,6 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Add the css library for crispy-forms to work with
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# The URL that we will be accessed on successful login
 LOGIN_REDIRECT_URL = "blog-home" 
+
+# The URL to be opened when unauthorised user accesses loggediin privileges
+LOGIN_URL="login"

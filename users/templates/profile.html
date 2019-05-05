@@ -3,10 +3,7 @@
 {% load crispy_forms_tags %}
 <!--Create a block of contenet-->
 {% block content %}
-    <h2>You have been logged Out</h2>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            <a href="{% url 'login' %}">Log In</a>
-        </small>
-    </div>
+    <!--Print current user name-->
+    <h2>{{ user.username }}</h2>
+    
 {% endblock content%} <!--block name is optional-->
