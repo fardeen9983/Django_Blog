@@ -245,3 +245,10 @@ We can specify the particular directory and URL for all our media files by addin
 
  When no profile image is added for an user we can specify the default image by placing the image of same name in MEDIA_ROOT directory.
  
+---
+## Django Signals 
+We can configure signals to respond to events such as model instantiation and perform some operation based on that. 
+
+One entity is responsible for sending signals. like a USer model when it is created can cause a signal generation. Similarly a function will act like a reciever to this signal and performs some task.
+
+After defining the signals, recievers and senders we need to register them in apps.py file of the app as a part of ready function of the app config class.
