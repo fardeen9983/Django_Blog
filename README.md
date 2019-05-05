@@ -222,4 +222,12 @@ If we do not specify Logout template Django will use the defalt Djando admin log
 
 Django specifies a global User variable that stores information of the current user whether he is logged in or not.
 
-We can also specify that a route can only be accessed by authenticated users. For this we can use the login_required decorator annotation on the route.
+We can also specify that a route can only be accessed by authenticated users. For this we can use the login_required decorator annotation on the route. This will redirect the user to login pafe and bring them back to the desired page after login.
+
+___
+## Update the default User model to have features like photos
+
+Create a Profile model extending the User model and adding extra features. To make the model use an image field we need to install Pillow module as well.
+>pip install Pillow
+
+Run migrations for the new model and apply them
