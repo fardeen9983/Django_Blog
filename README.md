@@ -252,3 +252,8 @@ We can configure signals to respond to events such as model instantiation and pe
 One entity is responsible for sending signals. like a USer model when it is created can cause a signal generation. Similarly a function will act like a reciever to this signal and performs some task.
 
 After defining the signals, recievers and senders we need to register them in apps.py file of the app as a part of ready function of the app config class.
+
+---
+## User Update form
+To update the user details we have to create a form specifically a model form taht realtes to the data of a particular form, just as we created the UserRegistrationForm in the forms.py file
+

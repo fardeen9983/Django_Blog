@@ -5,8 +5,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 # Import the redirect function to send the user to specific page
 from django.shortcuts import redirect
-# Import the new UserRegisterationForm
-from .forms.forms import UserRegistrationForm
+# Import the new UserRegisterationForm, Profile and USer update forms
+from .forms.forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
 # Import decorator to ensure user is logged in
 from django.contrib.auth.decorators import login_required
 
@@ -53,4 +53,14 @@ def register(request):
 # Create User profile page and only allow logged in users to access it.
 @login_required
 def profile(request):
-        return render(request,'profile.html')
+        # Add ability to update profile and user details
+        u_form = UserUpdateForm()
+        p_form = ProfileUpdateForm()
+
+        # Pass the two forms over to the Profile template
+        context = {
+                'u_form' : u_form,
+                'p_form' : p_form
+        }
+
+        return render(request,'profile.html',context) 

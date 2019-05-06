@@ -12,6 +12,20 @@
           </div>
         </div>
         <!-- FORM HERE -->
+        <form method="post">
+          <!--Add CSRF token (Cross Site Request forgery - a hidden token) -->
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Join Now</legend>
+              <!--Now render the ProfileUpdateForm and UserUpddateForm together in single page-->          
+              <!--Use crispy filter tags-->
+              {{ p_form|crispy}}
+              {{ u_sform|crispy}}
+              <div class="form-group">
+                  <button class="btn btn-outline-info" type="submit">Sign Up</button>
+              </div>
+          </fieldset>
+        </form>
       </div>
     
 {% endblock content%} <!--block name is optional-->

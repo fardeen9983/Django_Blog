@@ -18,3 +18,4 @@ users/__pycache__/urls.cpython-37.pyc
 users/__pycache__/views.cpython-37.pyc
 users/migrations/__pycache__/__init__.cpython-37.pyc
 users/migrations/__pycache__/0001_initial.cpython-37.pyc
+users/forms/__pycache__/forms.cpython-37.pyc
