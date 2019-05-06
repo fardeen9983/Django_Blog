@@ -257,3 +257,4 @@ After defining the signals, recievers and senders we need to register them in ap
 ## User Update form
 To update the user details we have to create a form specifically a model form taht realtes to the data of a particular form, just as we created the UserRegistrationForm in the forms.py file
 
+Resize the images using Pillow  

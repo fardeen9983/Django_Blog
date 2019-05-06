@@ -1,6 +1,8 @@
 from django.db import models
 # Import base User model
 from django.contrib.auth.models import User
+# From PIL lib import Image
+from PIL import Image
 
 # Create your models here.
 
@@ -24,6 +26,19 @@ class Profile(models.Model):
     # Define toString method
     def __str__(self):
         return f'{ self.user.username } Profile'
+
+    # Override the save method toresize uploaded pictures
+    def save(self):
+        super().save()
+        # Open the saved image
+        img = Image.open(self.image.path)
+        # Check if dimensions are more than desired
+        if img.width>300 and img.height >300:
+            output_size =(300,300)
+            # Resize the image
+            img.thumbnail(output_size)
+            # Save the image to the same path
+            img.save(self.image.path)
 
 # Finally run migrations for Profile model and register it in admin.py
 
