@@ -11,18 +11,18 @@
             <p class="text-secondary">{{ user.email }}</p>
           </div>
         </div>
-        <!-- FORM HERE -->
-        <form method="post">
+        <!-- FORM HERE: To properly transfer image data add an encryption type field -->
+        <form method="post" enctype="multipart/form-data">
           <!--Add CSRF token (Cross Site Request forgery - a hidden token) -->
           {% csrf_token %}
           <fieldset class="form-group">
               <legend class="border-bottom mb-4">Join Now</legend>
               <!--Now render the ProfileUpdateForm and UserUpddateForm together in single page-->          
               <!--Use crispy filter tags-->
+              {{ u_form|crispy}}
               {{ p_form|crispy}}
-              {{ u_sform|crispy}}
               <div class="form-group">
-                  <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                  <button class="btn btn-outline-info" type="Update">Update</button>
               </div>
           </fieldset>
         </form>

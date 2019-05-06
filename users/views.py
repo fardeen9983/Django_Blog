@@ -53,9 +53,22 @@ def register(request):
 # Create User profile page and only allow logged in users to access it.
 @login_required
 def profile(request):
+        u_form = UserUpdateForm(instance = request.user)
+        p_form = ProfileUpdateForm(instance = request.user.profile)
         # Add ability to update profile and user details
-        u_form = UserUpdateForm()
-        p_form = ProfileUpdateForm()
+        # Add already established data to default form value
+        if request.method =="POST":
+                u_form = UserUpdateForm(request.POST,instance = request.user)
+                p_form = ProfileUpdateForm(request.POST, request.FILES, instance = request.user.profile)
+                if u_form.is_valid and p_form.is_valid:
+                        # Save the details if successfull
+                        u_form.save()
+                        p_form.save()
+
+                        # Send success message
+                        messages.success(request,"Updated successfully")
+                        # Redirect the user to  Profile page through get request
+                        return redirect('profile')
 
         # Pass the two forms over to the Profile template
         context = {
